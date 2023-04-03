@@ -2,14 +2,20 @@ import { client, fruitCollection } from "../mongoconnect.js";
 
 client.connect()
 
-const editFruit = async () => {
+const editFruits = async () => {
     // collection.findOne({ name: 'Cantaloupe})
-    const updatedFruit = await fruitCollection.findOneAndUpdate(
-      { name: "Pineapple" },
-      { $set: { name: "Grape" } }
-    );
+      const updatedFruit = await fruitCollection.findOneAndUpdate(
+       { 
+            name: "Mango",
+       },
+       {
+         "$set": {
+            "name":"Peach"
+         }
+       }
+    )
   
     console.log(updatedFruit);
   };
   
-  editFruit()
+  editFruits()

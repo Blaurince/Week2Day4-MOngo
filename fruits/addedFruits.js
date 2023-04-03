@@ -5,26 +5,27 @@ import {client, fruitCollection} from '../mongoconnect.js'
 
 
 const addFruit = async () => {
+
   const myFruit = {
-    name: "Cantaloupe",
-    taste: "Sour",
-    price: 4,
+    name: "Strawberry",
+    taste: "Sweet",
+    price: 5,
     stock: 5,
-  };
+  }
 
   try {
-    await client.connect()
+    await client.connect();
     const addedFruit = await fruitCollection.insertOne(myFruit)
-} catch(error) {
-    console.log(error)
-} finally {
-    await client.close()
-}
+    console.log(addedFruit);
+  } catch(error) {
+      console.log(error)
+  } finally {
+      await client.close()
+  }
+};
 
   // const addedFruit = await fruitCollection.insertOne(myFruit);
   // console.log(addedFruit);
-};
-
-
+ 
 
 addFruit()

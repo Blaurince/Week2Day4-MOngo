@@ -46,7 +46,7 @@ const getAllFruits = async () => {
    // console.log(allFruits);
 };
 
-getAllFruits();
+//getAllFruits();
 
 
 const deleteFruit = async () => {
